@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background-color: aquamarine;
+      }
+      #logo {
+        width: 100px;
+      }
+      #notas {
+        height: 300px;
+        width: 200px;
+        background-color: white;
+        border: 2px solid purple;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 3px 3px 3px black;
+      }
+      label {
+        width: 90px;
+        display: inline-block;
+      }
+    </style>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <h1>Ejercicio JS</h1>
+    <img id="logo" src="images/img2.jpg" alt="Logo de la empresa" />
+    <br />
+    <label for="articulo"
+      >Artículo
+      <input type="text" id="articulo" />
+    </label>
+    <br />
+    <label for="precio"
+      >Precio
+      <input type="text" maxlength="2" id="precio" />
+    </label>
+    <br />
+    <button onclick="agregaArticulo()">Añadir</button>
+    <div id="notas"></div>
+    <h1 id="total">0</h1>
+    <script>
+      function agregaArticulo() {
+        let articulo = document.getElementById("articulo");
+        let notas = document.getElementById("notas");
+        notas.innerHTML = notas.innerHTML + "<br>" + articulo.value;
+        articulo.value = "";
+        let total = document.getElementById("total");
+        let precio = document.getElementById("precio");
+        total.innerHTML = parseInt(total.innerHTML) + parseInt(precio.value);
+      }
+    </script>
+  </body>
+</html>
